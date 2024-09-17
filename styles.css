@@ -1,0 +1,28 @@
+body {
+    background: lightblue;
+}
+
+label {
+    color: white;
+}
+
+.section {
+    background: purple;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: white;
+    width: 500px;
+    height: 25px;
+    text-align: center;
+    margin: 10px;
+    float: left;
+}x
+
+
+.row {
+    display: flex;
+    float: auto;
+    overflow: hidden;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST377 - Lab 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="header">INST377 - Lab 4</h1>
+    <div class="row">
+        <div class="section">
+            <form onsubmit="return(alertMe())" method="GET" name="nameForm">
+                <label>Name:</label>
+                <input type="text" placeholder="Name" id="name" required>
+                <button>Alert Me!</button> 
+            </form>
+        </div>
+        <div class="section">
+            <button onclick="return(changeColor())">Change Color</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="section">
+            <form onsubmit="return(textValidation())" method="GET" name="textForm">
+                <label>Text Tester:</label>
+                <input type="text" placeholder="" id="input" required>
+                <button>Validate Text</button>
+            </form>
+        </div>
+        <div class="section">
+            <button onclick="addText()" id="addButton">Add Text</button>
+        </div>
+    </div>
+
+    <!-- Javascript Section -->
+     <script type="text/javascript">
+            // Sends an alert that greets the user
+            function alertMe() {
+                alert('Hello ' + document.nameForm.name.value + "!")
+            }
+
+            // Validates the text to ensure that there are no restricted characters
+            function textValidation() {
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(document.textForm.input.value)) {
+                    alert("How about...nah")
+                }
+            }
+
+            // Changes the color of the background
+            function changeColor() {
+                if (document.body.style.backgroundColor == 'lightblue') {
+                    document.body.style.backgroundColor = 'green';
+                    return false;
+                }
+                else {
+                    document.body.style.backgroundColor = 'lightblue';
+                    return false;
+                }
+            }
+
+            // Adds text to the title
+            function addText() {
+                const header = document.getElementById('header');
+                header.textContent = "INST377 - Lab 4 - Adding Text";
+            }
+     </script>
+</body>
+</html>
